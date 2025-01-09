@@ -46,5 +46,12 @@ const CONFIG = {
     },
 
     // 管理员IP（部署时请修改为实际IP）
-    adminIps: ['127.0.0.1', 'localhost', '您的实际IP']
+    adminIps: ['127.0.0.1', 'localhost', '您的实际IP'],
+
+    // GitHub 仓库信息
+    github: {
+        owner: 'Ullong-ux',          // 您的 GitHub 用户名
+        repo: 'group-voting-system', // 您的仓库名
+        issueNumber: 1               // 刚才创建的 issue 编号
+    }
 }; 

@@ -65,14 +65,40 @@ select {
 .results-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1rem;
+    margin: 20px 0;
 }
 
 .results-table th,
 .results-table td {
-    padding: 0.8rem;
-    border: 1px solid #ddd;
+    padding: 12px;
     text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.results-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.results-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.total-votes {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.admin-header {
+    margin-bottom: 30px;
+}
+
+.results-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 @media (max-width: 480px) {
