@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组间互评投票系统</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="voting-form" class="voting-section">
+            <h1>组间互评投票</h1>
+            
+            <div class="form-group">
+                <h2>你是哪一组的？</h2>
+                <div id="selfGroup" class="radio-group">
+                    <!-- 这里会由 JavaScript 动态填充单选按钮 -->
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h2>你认为哪一组表现最好？</h2>
+                <div id="voteGroup" class="radio-group">
+                    <!-- 这里会由 JavaScript 动态填充单选按钮 -->
+                </div>
+            </div>
+
+            <button id="submitVote" class="submit-btn">提交投票</button>
+        </div>
+
+        <div id="voted-message" class="message-section" style="display: none;">
+            <h2>您已经完成投票</h2>
+            <p>感谢您的参与！</p>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

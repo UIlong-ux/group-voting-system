@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系统设置</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .group-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+        .group-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        .nav-links a {
+            margin-right: 10px;
+        }
+        .settings-actions {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        .btn.danger {
+            background-color: #dc3545;
+        }
+        .btn.primary {
+            background-color: #1a73e8;
+        }
+        .text-settings {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .text-item {
+            margin-bottom: 15px;
+        }
+        .text-item label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .text-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="admin-header">
+            <h1>系统设置</h1>
+            <div class="nav-links">
+                <a href="index.html" class="btn">投票页面</a>
+                <a href="admin.html" class="btn">查看结果</a>
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <div class="text-settings">
+                <h2>文本设置</h2>
+                <div class="text-item">
+                    <label>页面标题</label>
+                    <input type="text" id="pageTitle" class="text-input">
+                </div>
+                <div class="text-item">
+                    <label>第一个问题标题</label>
+                    <input type="text" id="selfGroupTitle" class="text-input">
+                </div>
+                <div class="text-item">
+                    <label>第二个问题标题</label>
+                    <input type="text" id="voteGroupTitle" class="text-input">
+                </div>
+            </div>
+
+            <h2>组别设置</h2>
+            <div id="groupList">
+                <!-- 组别列表将由 JavaScript 动态生成 -->
+            </div>
+            <div class="admin-controls">
+                <button id="addGroupBtn" class="btn">添加新组</button>
+                <button id="saveSettingsBtn" class="btn primary">保存设置</button>
+            </div>
+
+            <div class="settings-actions">
+                <h2>系统操作</h2>
+                <button id="resetVotesBtn" class="btn danger">重置投票数据</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html> 
