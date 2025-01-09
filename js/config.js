@@ -50,7 +50,7 @@ export const CONFIG = {
 
     // GitHub 仓库信息
     github: {
-        owner: 'Ullong-ux',          
+        owner: 'UIlong-ux',          
         repo: 'group-voting-system', 
         issueNumber: 1               
     }
