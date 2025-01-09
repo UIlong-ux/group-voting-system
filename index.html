@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>组间互评投票系统</title>
+    <title>组间互评投票</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
-        <div id="voting-form" class="voting-section">
-            <h1>组间互评投票</h1>
-            
+        <h1>组间互评投票</h1>
+        
+        <div id="voting-form" class="voting-form">
             <div class="form-group">
-                <h2>你是哪一组的？</h2>
+                <h2 id="selfGroupTitle">你是哪一组的？</h2>
                 <div id="selfGroup" class="radio-group">
-                    <!-- 这里会由 JavaScript 动态填充单选按钮 -->
+                    <!-- 组别选项将由 JavaScript 动态生成 -->
                 </div>
             </div>
 
             <div class="form-group">
-                <h2>你认为哪一组表现最好？</h2>
+                <h2 id="voteGroupTitle">你认为哪一组表现最好？</h2>
                 <div id="voteGroup" class="radio-group">
-                    <!-- 这里会由 JavaScript 动态填充单选按钮 -->
+                    <!-- 投票选项将由 JavaScript 动态生成 -->
                 </div>
             </div>
 
-            <button id="submitVote" class="submit-btn">提交投票</button>
+            <button id="submitVote" class="btn">提交投票</button>
         </div>
 
-        <div id="voted-message" class="message-section" style="display: none;">
-            <h2>您已经完成投票</h2>
-            <p>感谢您的参与！</p>
+        <div id="voted-message" class="voted-message" style="display: none;">
+            <h2>感谢您的投票！</h2>
+            <p>您已经完成投票，每个用户只能投票一次。</p>
         </div>
     </div>
 

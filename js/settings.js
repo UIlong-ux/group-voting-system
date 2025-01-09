@@ -19,15 +19,21 @@ class SettingsPanel {
     }
 
     loadGroups() {
-        // 从 localStorage 加载组别设置，如果没有则使用默认设置
         const savedGroups = localStorage.getItem('voting_system_groups');
         const groups = savedGroups ? JSON.parse(savedGroups) : CONFIG.groups;
         
-        this.groupList.innerHTML = ''; // 清空现有列表
+        this.groupList.innerHTML = '';
         
         groups.forEach((group, index) => {
             this.addGroupElement(group, index);
         });
+    }
+
+    loadTexts() {
+        const texts = CONFIG.texts;
+        this.pageTitleInput.value = texts.pageTitle;
+        this.selfGroupTitleInput.value = texts.selfGroupTitle;
+        this.voteGroupTitleInput.value = texts.voteGroupTitle;
     }
 
     addGroupElement(groupName = '', index) {
@@ -54,15 +60,7 @@ class SettingsPanel {
         this.addGroupElement();
     }
 
-    loadTexts() {
-        const texts = CONFIG.texts;
-        this.pageTitleInput.value = texts.pageTitle;
-        this.selfGroupTitleInput.value = texts.selfGroupTitle;
-        this.voteGroupTitleInput.value = texts.voteGroupTitle;
-    }
-
     saveSettings() {
-        // 保存组别设置
         const inputs = this.groupList.querySelectorAll('.group-input');
         const newGroups = Array.from(inputs).map(input => input.value.trim()).filter(value => value);
         
@@ -71,18 +69,15 @@ class SettingsPanel {
             return;
         }
 
-        // 保存文本设置
         const newTexts = {
             pageTitle: this.pageTitleInput.value.trim() || CONFIG.texts.pageTitle,
             selfGroupTitle: this.selfGroupTitleInput.value.trim() || CONFIG.texts.selfGroupTitle,
             voteGroupTitle: this.voteGroupTitleInput.value.trim() || CONFIG.texts.voteGroupTitle
         };
 
-        // 保存所有设置
         localStorage.setItem('voting_system_groups', JSON.stringify(newGroups));
         localStorage.setItem('voting_system_texts', JSON.stringify(newTexts));
         
-        // 清除投票数据
         Object.values(CONFIG.storageKeys).forEach(key => {
             if (key !== CONFIG.storageKeys.groups && key !== CONFIG.storageKeys.texts) {
                 localStorage.removeItem(key);
@@ -91,7 +86,6 @@ class SettingsPanel {
 
         alert('设置已保存！');
         
-        // 刷新所有打开的页面
         if (window.opener) {
             window.opener.location.reload();
         }
@@ -100,7 +94,6 @@ class SettingsPanel {
 
     resetVotes() {
         if (confirm('确定要重置所有投票数据吗？此操作不可恢复！')) {
-            // 只清除投票相关的数据，保留组别设置
             const keysToReset = [
                 CONFIG.storageKeys.hasVoted,
                 CONFIG.storageKeys.selfGroup,
@@ -114,7 +107,6 @@ class SettingsPanel {
 
             alert('投票数据已重置！');
             
-            // 刷新所有打开的页面
             if (window.opener) {
                 window.opener.location.reload();
             }

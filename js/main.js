@@ -105,9 +105,12 @@ class VotingSystem {
 
     updateTexts() {
         const texts = CONFIG.texts;
+        // 更新页面标题
         document.querySelector('h1').textContent = texts.pageTitle;
-        document.querySelector('.form-group h2:first-of-type').textContent = texts.selfGroupTitle;
-        document.querySelector('.form-group h2:last-of-type').textContent = texts.voteGroupTitle;
+        // 更新第一个问题标题
+        document.querySelector('#selfGroupTitle').textContent = texts.selfGroupTitle;
+        // 更新第二个问题标题
+        document.querySelector('#voteGroupTitle').textContent = texts.voteGroupTitle;
     }
 }
 

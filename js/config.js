@@ -46,5 +46,5 @@ const CONFIG = {
     },
 
     // 管理员IP（部署时请修改为实际IP）
-    adminIps: ['localhost', '127.0.0.1']
+    adminIps: ['127.0.0.1', 'localhost', '您的实际IP']
 }; 
