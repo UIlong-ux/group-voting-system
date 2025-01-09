@@ -1,4 +1,4 @@
-const CONFIG = {
+export const CONFIG = {
     // 获取组别配置
     get groups() {
         const savedGroups = localStorage.getItem('voting_system_groups');
@@ -50,8 +50,8 @@ const CONFIG = {
 
     // GitHub 仓库信息
     github: {
-        owner: 'Ullong-ux',          // 您的 GitHub 用户名
-        repo: 'group-voting-system', // 您的仓库名
-        issueNumber: 1               // 刚才创建的 issue 编号
+        owner: 'Ullong-ux',          
+        repo: 'group-voting-system', 
+        issueNumber: 1               
     }
 }; 

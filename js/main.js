@@ -1,3 +1,4 @@
+import { CONFIG } from './config.js';
 import { voteStorage } from './storage.js';
 
 class VotingSystem {

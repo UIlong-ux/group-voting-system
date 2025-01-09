@@ -1,3 +1,5 @@
+import { CONFIG } from './config.js';
+
 class VoteStorage {
     constructor() {
         this.baseUrl = `https://api.github.com/repos/${CONFIG.github.owner}/${CONFIG.github.repo}/issues/${CONFIG.github.issueNumber}/comments`;
